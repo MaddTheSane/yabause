@@ -43,6 +43,7 @@ static int MacOSXCDInit(const char *);
 static void MacOSXCDDeInit(void);
 static int MacOSXCDGetStatus(void);
 static s32 MacOSXCDReadTOC(u32 *);
+static s32 MacOSXCDReadTOC10(CDInterfaceToc10 *);
 static int MacOSXCDReadSectorFAD(u32, void *);
 static void MacOSXCDReadAheadFAD(u32);
 
@@ -53,6 +54,7 @@ MacOSXCDInit,
 MacOSXCDDeInit,
 MacOSXCDGetStatus,
 MacOSXCDReadTOC,
+NULL,
 MacOSXCDReadSectorFAD,
 MacOSXCDReadAheadFAD,
 };

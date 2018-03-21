@@ -84,7 +84,7 @@ VideoInterface_struct *VIDCoreList[] = {
 void YuiErrorMsg(const char *string) {
     NSString *str = [NSString stringWithUTF8String:string];
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSRunAlertPanel(@"Yabause Error", str, @"OK", NULL, NULL);
+        NSRunAlertPanel(@"Yabause Error", @"%@", @"OK", NULL, NULL, str);
     });
 }
 
