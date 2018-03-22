@@ -76,7 +76,7 @@ void TitanPutPixel(int priority, s32 x, s32 y, u32 color, int linescreen, vdp2dr
 
 /////////////////////////////////////////////////////////////////////
 
-void mpeg_reg_debug_print();
+void mpeg_reg_debug_print(void);
 
 //a100000
 //write

@@ -24,11 +24,11 @@ typedef int YabSock;
 
 // YabSockInit: Initializes socket code.
 // Returns 0 on success. -1 on error.
-int YabSockInit();
+int YabSockInit(void);
 
 // YabSockDeInit: DeInitialize/frees socket code. 
 // Returns 0 on success. -1 on error.
-int YabSockDeInit();
+int YabSockDeInit(void);
 
 // YabSockConnectSocket: Attempts to connect to specified ip and port.
 // Returns 0 on success. -1 on error.

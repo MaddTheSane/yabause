@@ -131,10 +131,10 @@ struct ScspDspInterface
    u32(*get_exts)(u32 addr);
    u32(*get_madrs)(u32 addr);
    u32(*get_mems)(u32 addr);
-   void(*exec)();
+   void(*exec)(void);
 };
 
 extern struct ScspDspInterface dsp_inf;
 
-void scsp_dsp_int_init();
+void scsp_dsp_int_init(void);
 #endif

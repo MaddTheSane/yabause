@@ -42,7 +42,7 @@ void FASTCALL Sh1MemoryWriteByte(SH2_struct *sh, u32 addr, u8 val);
 void FASTCALL Sh1MemoryWriteWord(SH2_struct *sh, u32 addr, u16 val);
 void FASTCALL Sh1MemoryWriteLong(SH2_struct *sh, u32 addr, u32 val);
 
-void sh1_init_func();
+void sh1_init_func(void);
 void sh1_serial_recieve_bit(int bit, int channel);
 void sh1_set_start(int state);
 void sh1_serial_transmit_bit(int channel, int* output_bit);
@@ -255,8 +255,8 @@ extern struct Sh1 sh1_cxt;
 
 void sh1_exec(struct Sh1 * sh1, s32 cycles);
 void sh1_onchip_run_cycles(s32 cycles);
-void sh1_set_output_enable_rising_edge();
-void sh1_set_output_enable_falling_edge();
+void sh1_set_output_enable_rising_edge(void);
+void sh1_set_output_enable_falling_edge(void);
 void sh1_dma_exec(s32 cycles);
 
 // SCI SCR bits

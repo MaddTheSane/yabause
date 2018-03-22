@@ -2255,7 +2255,7 @@ int VIDSoftSetupGL(void)
    outputwidth = vdp2width;
    outputheight = vdp2height;
 
-#if !(defined(YAB_USING_COCOA) && YAB_USING_COCOA)
+#if defined(_USEGLEW_)
    glewInit();
 #endif
 

@@ -323,8 +323,8 @@ struct ScuDspInterface
    void(*set_data_address)(u32 val);
    void(*set_data_ram_data)(u32 val);
    void(*set_program_control)(u32 val);
-   u32(*get_program_control)();
-   u32(*get_data_ram)();
+   u32(*get_program_control)(void);
+   u32(*get_data_ram)(void);
 };
 
 extern struct ScuDspInterface scu_dsp_inf;

@@ -26,7 +26,7 @@
 void tsunami_init_dummy(void);
 void tsunami_log_value_dummy(char * name, int value, int size);
 void tsunami_log_pulse_dummy(char * name, int value);
-void tsunami_flush_dummy();
+void tsunami_flush_dummy(void);
 
 #ifdef ENABLE_TSUNAMI
 void tsunami_init(void);

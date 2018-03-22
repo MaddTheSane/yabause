@@ -38,9 +38,9 @@
 #define TITAN_NORMAL_SHADOW 1
 #define TITAN_MSB_SHADOW 2
 
-int TitanInit();
-int TitanDeInit();
-void TitanErase();
+int TitanInit(void);
+int TitanDeInit(void);
+void TitanErase(void);
 
 void TitanSetResolution(int width, int height);
 void TitanGetResolution(int * width, int * height);

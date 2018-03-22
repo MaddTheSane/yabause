@@ -258,7 +258,7 @@ void Ygl_uniformVDP2DrawFramebuffer_linecolor(void * p, float from, float to, fl
 int Ygl_uniformVDP2DrawFramebuffer_addcolor(void * p, float from, float to, float * offsetcol);
 void Ygl_uniformVDP2DrawFramebuffer( void * p,float from, float to , float * offsetcol );
 
-void YglNeedToUpdateWindow();
+void YglNeedToUpdateWindow(void);
 
 void YglScalef(YglMatrix *result, GLfloat sx, GLfloat sy, GLfloat sz);
 void YglTranslatef(YglMatrix *result, GLfloat tx, GLfloat ty, GLfloat tz);
@@ -270,22 +270,22 @@ void YglLoadIdentity(YglMatrix *result);
 void YglMatrixMultiply(YglMatrix *result, YglMatrix *srcA, YglMatrix *srcB);
 
 int YglInitVertexBuffer( int initsize );
-void YglDeleteVertexBuffer();
-int YglUnMapVertexBuffer();
-int YglMapVertexBuffer();
-int YglUserDirectVertexBuffer();
-int YglUserVertexBuffer();
+void YglDeleteVertexBuffer(void);
+int YglUnMapVertexBuffer(void);
+int YglMapVertexBuffer(void);
+int YglUserDirectVertexBuffer(void);
+int YglUserVertexBuffer(void);
 int YglGetVertexBuffer( int size, void ** vpos, void **tcpos, void **vapos );
 int YglExpandVertexBuffer( int addsize, void ** vpos, void **tcpos, void **vapos );
 intptr_t YglGetOffset( void* address );
 int YglBlitFramebuffer(u32 srcTexture, u32 targetFbo, float w, float h);
 
 void YglRenderVDP1(void);
-u32 * YglGetLineColorPointer();
+u32 * YglGetLineColorPointer(void);
 void YglSetLineColor(u32 * pbuf, int size);
 
 int Ygl_uniformWindow(void * p );
-int YglProgramInit();
+int YglProgramInit(void);
 int YglProgramChange( YglLevel * level, int prgid );
 
 #if !defined(__APPLE__) && !defined(__ANDROID__) && !defined(_USEGLEW_) && !defined(_OGLES3_)

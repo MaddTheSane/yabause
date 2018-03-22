@@ -269,7 +269,7 @@ static void FlipToggle(NSMenuItem *item) {
 		
 		if([prefs enableThreads])
 		{
-			int num_threads = [[NSProcessInfo processInfo] processorCount];
+			NSInteger num_threads = [[NSProcessInfo processInfo] processorCount];
 			
 			if(num_threads > 1)
 			{

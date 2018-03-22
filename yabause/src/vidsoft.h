@@ -40,6 +40,6 @@ void VIDSoftSetNumLayerThreads(int num);
 
 void VIDSoftSetVdp1ThreadEnable(int b);
 
-void VidsoftWaitForVdp1Thread();
+void VidsoftWaitForVdp1Thread(void);
 
 #endif

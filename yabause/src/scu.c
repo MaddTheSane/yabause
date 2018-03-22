@@ -53,7 +53,7 @@ scubp_struct * ScuBP;
 static int incFlg[4] = { 0 };
 static void ScuTestInterruptMask(void);
 struct ScuDspInterface scu_dsp_inf;
-void scu_dsp_init();
+void scu_dsp_init(void);
 //////////////////////////////////////////////////////////////////////////////
 
 int ScuInit(void) {
@@ -443,7 +443,7 @@ static void DoDMA(u32 ReadAddress, unsigned int ReadAdd,
 #define DSP_B_BUS 2
 #define DSP_A_BUS 3
 
-void scu_sort_dma();
+void scu_sort_dma(void);
 
 struct QueuedDma
 {

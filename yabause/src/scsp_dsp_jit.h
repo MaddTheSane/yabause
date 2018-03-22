@@ -22,7 +22,7 @@
 
 #include "core.h"
 
-void scsp_dsp_jit_exec();
-void scsp_dsp_jit_need_recompile();
-void scsp_dsp_jit_init();
+void scsp_dsp_jit_exec(void);
+void scsp_dsp_jit_need_recompile(void);
+void scsp_dsp_jit_init(void);
 #endif

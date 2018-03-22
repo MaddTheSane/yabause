@@ -201,7 +201,7 @@ void do_toc()
       make_status_data(&cdd_cxt.state, cdd_cxt.state_data);
    }
 }
-void update_seek_status();
+void update_seek_status(void);
 
 void update_status_info()
 {

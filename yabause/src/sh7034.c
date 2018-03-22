@@ -5289,7 +5289,7 @@ void transmit_bit_to_cdd()
    sh1_serial_transmit_bit(0, &send_to_cdd);
    cd_drive_set_serial_bit(send_to_cdd);
 }
-void cd_serial_exec();
+void cd_serial_exec(void);
 void tick_serial(int channel)
 {
    u8 bit_rate = sh1_cxt.onchip.sci[channel].brr;

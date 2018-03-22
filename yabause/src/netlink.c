@@ -41,10 +41,10 @@ static volatile u8 netlink_client_thread_running;
 
 static int NetworkInit(const char *port);
 static void NetworkDeInit(void);
-static void NetworkStopClient();
-static void NetworkStopConnect();
+static void NetworkStopClient(void);
+static void NetworkStopConnect(void);
 static void NetworkConnect(const char *ip, const char *port);
-static int NetworkWaitForConnect();
+static int NetworkWaitForConnect(void);
 static int NetworkSend(const void *buffer, int length);
 static int NetworkReceive(void *buffer, int maxlength);
 

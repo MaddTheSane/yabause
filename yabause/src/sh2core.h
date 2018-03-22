@@ -442,7 +442,7 @@ struct SH2Interface_struct
    const char *Name;
 
    int (*Init)(enum SHMODELTYPE model, SH2_struct *msh, SH2_struct *ssh);
-   void (*DeInit)();
+   void (*DeInit)(void);
    void (*Reset)(SH2_struct *context);
    void FASTCALL (*Exec)(SH2_struct *context, u32 cycles);
 

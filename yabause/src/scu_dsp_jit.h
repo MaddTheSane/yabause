@@ -23,5 +23,5 @@
 #include "core.h"
 
 void scu_dsp_jit_exec(u32 cycles);
-void scu_dsp_jit_init();
+void scu_dsp_jit_init(void);
 #endif
