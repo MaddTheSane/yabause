@@ -58,6 +58,7 @@
 		2A7D3A9B115BAB9E00DE3BD1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A7D3A99115BAB9E00DE3BD1 /* MainMenu.xib */; };
 		2A82CCA1116171DB00F15B02 /* PerCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82CCA0116171DB00F15B02 /* PerCocoa.m */; };
 		2A9D7600116645D700A580EB /* sndmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D75FE116645D700A580EB /* sndmac.c */; };
+		2A9D760E11665F2800A580EB /* controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D760D11665F2800A580EB /* controller.png */; };
 		2A9D7621116667C300A580EB /* YabausePrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D761F116667C300A580EB /* YabausePrefsController.m */; };
 		2AD10F9F118BBC850088FB2C /* snddummy.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD10F99118BBC850088FB2C /* snddummy.c */; };
 		2AD10FA0118BBC850088FB2C /* sndwav.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD10F9A118BBC850088FB2C /* sndwav.c */; };
@@ -81,6 +82,9 @@
 		554AD95F2064300A0032B889 /* m68kopac.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD95A2064300A0032B889 /* m68kopac.c */; };
 		554AD9602064300A0032B889 /* m68kopdm.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD95B2064300A0032B889 /* m68kopdm.c */; };
 		554AD9612064300A0032B889 /* m68kops.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD95C2064300A0032B889 /* m68kops.c */; };
+		554AD977206444440032B889 /* OSD_MacUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD976206444440032B889 /* OSD_MacUI.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		554AD97D206447E70032B889 /* YabauseMacOSD.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD97B206447E70032B889 /* YabauseMacOSD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		554AD97E206447E70032B889 /* MacOSD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554AD97C206447E70032B889 /* MacOSD.xib */; };
 		558C7BE42063336B009CE1F5 /* sndal.c in Sources */ = {isa = PBXBuildFile; fileRef = 558C7BE32063336B009CE1F5 /* sndal.c */; };
 		558C7BE620633397009CE1F5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558C7BE520633397009CE1F5 /* OpenAL.framework */; };
 		55BE7EEB2063741700400111 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BE7EEA20636F6A00400111 /* Media.xcassets */; };
@@ -216,6 +220,7 @@
 		2A82CCA0116171DB00F15B02 /* PerCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerCocoa.m; sourceTree = "<group>"; };
 		2A9D75FE116645D700A580EB /* sndmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndmac.c; sourceTree = "<group>"; };
 		2A9D75FF116645D700A580EB /* sndmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndmac.h; sourceTree = "<group>"; };
+		2A9D760D11665F2800A580EB /* controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller.png; sourceTree = "<group>"; };
 		2A9D761F116667C300A580EB /* YabausePrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YabausePrefsController.m; sourceTree = "<group>"; };
 		2A9D7620116667C300A580EB /* YabausePrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YabausePrefsController.h; sourceTree = "<group>"; };
 		2AD10F97118BBC850088FB2C /* scsp2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scsp2.c; sourceTree = "<group>"; };
@@ -281,6 +286,10 @@
 		554AD9732064310B0032B889 /* c68k_op1.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = c68k_op1.inc; sourceTree = "<group>"; };
 		554AD9742064310B0032B889 /* c68k_opA.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = c68k_opA.inc; sourceTree = "<group>"; };
 		554AD9752064310B0032B889 /* c68k_opE.inc */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.pascal; path = c68k_opE.inc; sourceTree = "<group>"; };
+		554AD976206444440032B889 /* OSD_MacUI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSD_MacUI.m; sourceTree = "<group>"; };
+		554AD97A206447E70032B889 /* YabauseMacOSD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YabauseMacOSD.h; sourceTree = "<group>"; };
+		554AD97B206447E70032B889 /* YabauseMacOSD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YabauseMacOSD.m; sourceTree = "<group>"; };
+		554AD97C206447E70032B889 /* MacOSD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacOSD.xib; sourceTree = "<group>"; };
 		558C7BE22063336B009CE1F5 /* sndal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndal.h; sourceTree = "<group>"; };
 		558C7BE32063336B009CE1F5 /* sndal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndal.c; sourceTree = "<group>"; };
 		558C7BE520633397009CE1F5 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -338,6 +347,8 @@
 				2AF0CA4F116146A400196BED /* YabauseGLView.m */,
 				2A9D7620116667C300A580EB /* YabausePrefsController.h */,
 				2A9D761F116667C300A580EB /* YabausePrefsController.m */,
+				554AD97A206447E70032B889 /* YabauseMacOSD.h */,
+				554AD97B206447E70032B889 /* YabauseMacOSD.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -398,6 +409,7 @@
 				2A82CCA0116171DB00F15B02 /* PerCocoa.m */,
 				2A7D39CD115BA16100DE3BD1 /* vidgcd.h */,
 				2A7D39CC115BA16100DE3BD1 /* vidgcd.c */,
+				554AD976206444440032B889 /* OSD_MacUI.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -405,10 +417,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A9D760D11665F2800A580EB /* controller.png */,
 				2A7D3AD4115BB01500DE3BD1 /* Yabause.icns */,
 				8D1107310486CEB800E47090 /* Yabause-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				2A7D3A99115BAB9E00DE3BD1 /* MainMenu.xib */,
+				554AD97C206447E70032B889 /* MacOSD.xib */,
 				55BE7EEA20636F6A00400111 /* Media.xcassets */,
 			);
 			name = Resources;
@@ -736,6 +750,8 @@
 				55BE7EEB2063741700400111 /* Media.xcassets in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				2A7D3A9B115BAB9E00DE3BD1 /* MainMenu.xib in Resources */,
+				554AD97E206447E70032B889 /* MacOSD.xib in Resources */,
+				2A9D760E11665F2800A580EB /* controller.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -828,6 +844,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				2A7D39D3115BA16100DE3BD1 /* bios.c in Sources */,
 				554AD95F2064300A0032B889 /* m68kopac.c in Sources */,
+				554AD97D206447E70032B889 /* YabauseMacOSD.m in Sources */,
 				2A7D39D4115BA16100DE3BD1 /* cd-macosx.c in Sources */,
 				2A7D39D5115BA16100DE3BD1 /* cdbase.c in Sources */,
 				2A7D39D6115BA16100DE3BD1 /* cheat.c in Sources */,
@@ -873,6 +890,7 @@
 				554AD95E2064300A0032B889 /* m68kopnz.c in Sources */,
 				558C7BE42063336B009CE1F5 /* sndal.c in Sources */,
 				2A7D39F5115BA16100DE3BD1 /* vidshared.c in Sources */,
+				554AD977206444440032B889 /* OSD_MacUI.m in Sources */,
 				2A7D39F6115BA16100DE3BD1 /* vidgcd.c in Sources */,
 				2A7D39F7115BA16100DE3BD1 /* yabause.c in Sources */,
 				2A7D39F8115BA16100DE3BD1 /* ygles.c in Sources */,
@@ -1067,6 +1085,10 @@
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					USING_COCOA,
+					"$(inherited)",
+				);
 				GCC_UNROLL_LOOPS = YES;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Yabause-Info.plist";
@@ -1084,6 +1106,10 @@
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					USING_COCOA,
+					"$(inherited)",
+				);
 				GCC_UNROLL_LOOPS = YES;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Yabause-Info.plist";
@@ -1109,7 +1135,6 @@
 					NO_CLI,
 					HAVE_LIBGL,
 					HAVE_LIBAL,
-					HAVE_LIBGLUT,
 					HAVE_SYS_TIME_H,
 					HAVE_GETTIMEOFDAY,
 					HAVE_STRCASECMP,
@@ -1142,7 +1167,6 @@
 					NO_CLI,
 					HAVE_LIBGL,
 					HAVE_LIBAL,
-					HAVE_LIBGLUT,
 					HAVE_SYS_TIME_H,
 					HAVE_GETTIMEOFDAY,
 					HAVE_STRCASECMP,

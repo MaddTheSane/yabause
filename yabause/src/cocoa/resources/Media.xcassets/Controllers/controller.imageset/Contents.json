@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "controller.png",
+      "filename" : "controller copy.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "controller copy@2x.png",
       "scale" : "2x"
     },
     {

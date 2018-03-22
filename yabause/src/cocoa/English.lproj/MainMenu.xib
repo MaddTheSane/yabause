@@ -648,9 +648,9 @@
                             <tabViewItem label="Input" identifier="Item 3" id="953">
                                 <view key="view" id="954">
                                     <rect key="frame" x="10" y="33" width="438" height="338"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tabView autoresizesSubviews="NO" initialItem="966" id="965">
+                                        <tabView initialItem="966" id="965">
                                             <rect key="frame" x="10" y="7" width="418" height="324"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -658,7 +658,7 @@
                                                 <tabViewItem label="Controller 1" identifier="1" id="966">
                                                     <view key="view" id="969">
                                                         <rect key="frame" x="10" y="33" width="398" height="278"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <imageView id="972">
                                                                 <rect key="frame" x="14" y="14" width="370" height="264"/>
@@ -814,7 +814,7 @@
                                                 <tabViewItem label="Controller 2" identifier="2" id="967">
                                                     <view key="view" id="968">
                                                         <rect key="frame" x="10" y="33" width="398" height="278"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
                                                             <imageView id="1000">
                                                                 <rect key="frame" x="14" y="14" width="370" height="264"/>
@@ -976,6 +976,7 @@
                     </tabView>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="390" y="267"/>
         </window>
         <customObject id="1050" customClass="YabausePrefsController">
             <connections>

@@ -49,6 +49,9 @@ OSD_struct *OSDCoreList[] = {
 #ifndef _arch_dreamcast
 &OSDSoft,
 #endif
+#ifdef USING_COCOA
+&OSDMacUI,
+#endif
 NULL
 };
 #else

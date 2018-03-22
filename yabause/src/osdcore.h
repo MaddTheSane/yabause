@@ -25,6 +25,7 @@
 #define OSDCORE_DUMMY    0
 #define OSDCORE_GLUT     1
 #define OSDCORE_SOFT     2
+#define OSDCORE_MACUI    3
 
 #ifdef HAVE_LIBGLUT
   #define OSDCORE_DEFAULT  OSDCORE_GLUT
@@ -72,6 +73,9 @@ extern OSD_struct OSDDummy;
 extern OSD_struct OSDGlut;
 #endif
 extern OSD_struct OSDSoft;
+#ifdef USING_COCOA
+extern OSD_struct OSDMacUI;
+#endif
 
 /* defined for backward compatibility (used to be in vdp2.h) */
 void ToggleFPS(void);
