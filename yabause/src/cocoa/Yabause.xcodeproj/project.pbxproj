@@ -56,10 +56,8 @@
 		2A7D3A4B115BA3AF00DE3BD1 /* gen68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D3A45115BA3AF00DE3BD1 /* gen68k.c */; };
 		2A7D3A5A115BA41200DE3BD1 /* gen68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D3A45115BA3AF00DE3BD1 /* gen68k.c */; };
 		2A7D3A9B115BAB9E00DE3BD1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A7D3A99115BAB9E00DE3BD1 /* MainMenu.xib */; };
-		2A7D3AD5115BB01500DE3BD1 /* Yabause.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2A7D3AD4115BB01500DE3BD1 /* Yabause.icns */; };
 		2A82CCA1116171DB00F15B02 /* PerCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82CCA0116171DB00F15B02 /* PerCocoa.m */; };
 		2A9D7600116645D700A580EB /* sndmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D75FE116645D700A580EB /* sndmac.c */; };
-		2A9D760E11665F2800A580EB /* controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D760D11665F2800A580EB /* controller.png */; };
 		2A9D7621116667C300A580EB /* YabausePrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D761F116667C300A580EB /* YabausePrefsController.m */; };
 		2AD10F9F118BBC850088FB2C /* snddummy.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD10F99118BBC850088FB2C /* snddummy.c */; };
 		2AD10FA0118BBC850088FB2C /* sndwav.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD10F9A118BBC850088FB2C /* sndwav.c */; };
@@ -80,6 +78,7 @@
 		554552D820630E9200ADE907 /* cd_drive.c in Sources */ = {isa = PBXBuildFile; fileRef = 554552D620630E9100ADE907 /* cd_drive.c */; };
 		558C7BE42063336B009CE1F5 /* sndal.c in Sources */ = {isa = PBXBuildFile; fileRef = 558C7BE32063336B009CE1F5 /* sndal.c */; };
 		558C7BE620633397009CE1F5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558C7BE520633397009CE1F5 /* OpenAL.framework */; };
+		55BE7EEB2063741700400111 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BE7EEA20636F6A00400111 /* Media.xcassets */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -205,7 +204,6 @@
 		2A82CCA0116171DB00F15B02 /* PerCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerCocoa.m; sourceTree = "<group>"; };
 		2A9D75FE116645D700A580EB /* sndmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndmac.c; sourceTree = "<group>"; };
 		2A9D75FF116645D700A580EB /* sndmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndmac.h; sourceTree = "<group>"; };
-		2A9D760D11665F2800A580EB /* controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = controller.png; path = resources/controller.png; sourceTree = "<group>"; };
 		2A9D761F116667C300A580EB /* YabausePrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YabausePrefsController.m; sourceTree = "<group>"; };
 		2A9D7620116667C300A580EB /* YabausePrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YabausePrefsController.h; sourceTree = "<group>"; };
 		2AD10F97118BBC850088FB2C /* scsp2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scsp2.c; sourceTree = "<group>"; };
@@ -243,6 +241,7 @@
 		558C7BE22063336B009CE1F5 /* sndal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndal.h; sourceTree = "<group>"; };
 		558C7BE32063336B009CE1F5 /* sndal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndal.c; sourceTree = "<group>"; };
 		558C7BE520633397009CE1F5 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		55BE7EEA20636F6A00400111 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = resources/Media.xcassets; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Yabause-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Yabause-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yabause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yabause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07BF9E314A1C2C500775818 /* yglshaderes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yglshaderes.c; sourceTree = "<group>"; };
@@ -355,11 +354,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2A9D760D11665F2800A580EB /* controller.png */,
 				2A7D3AD4115BB01500DE3BD1 /* Yabause.icns */,
 				8D1107310486CEB800E47090 /* Yabause-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				2A7D3A99115BAB9E00DE3BD1 /* MainMenu.xib */,
+				55BE7EEA20636F6A00400111 /* Media.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -600,11 +599,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55BE7EEB2063741700400111 /* Media.xcassets in Resources */,
 				554552C420630C8B00ADE907 /* README.md in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				2A7D3A9B115BAB9E00DE3BD1 /* MainMenu.xib in Resources */,
-				2A7D3AD5115BB01500DE3BD1 /* Yabause.icns in Resources */,
-				2A9D760E11665F2800A580EB /* controller.png in Resources */,
 				554552C120630C8B00ADE907 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,6 +793,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Yabause;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_OPENMP_SUPPORT = NO;
@@ -813,6 +812,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Yabause;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_NO_COMMON_BLOCKS = NO;
