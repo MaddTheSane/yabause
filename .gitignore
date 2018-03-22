@@ -1,0 +1,13 @@
+.DS_Store
+c68k_???.inc
+libyabause.a
+yabause/src/config.h
+
+# cmake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Xcode
+xcuserdata/
+project.xcworkspace/
