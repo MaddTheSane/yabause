@@ -22,7 +22,7 @@
 
 #import <Cocoa/Cocoa.h>
 #include <OpenGL/OpenGL.h>
-#include <OpenGL/GL.h>
+#include <OpenGL/gl3.h>
 
 @interface YabauseGLView : NSOpenGLView {
     IBOutlet NSWindow *window;

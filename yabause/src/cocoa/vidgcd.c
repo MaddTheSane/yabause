@@ -22,10 +22,6 @@
 
 #include <dispatch/dispatch.h>
 
-#ifdef HAVE_LIBGL
-#include <OpenGL/gl.h>
-#endif
-
 #include "vidgcd.h"
 #include "vidshared.h"
 #include "debug.h"
