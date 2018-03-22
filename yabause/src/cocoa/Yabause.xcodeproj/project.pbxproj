@@ -481,6 +481,7 @@
 				554552CB20630D7100ADE907 /* ygr.h */,
 				2A7D39D2115BA16100DE3BD1 /* yui.h */,
 			);
+			indentWidth = 3;
 			name = "Emulation Core";
 			path = ..;
 			sourceTree = "<group>";

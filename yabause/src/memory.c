@@ -1447,7 +1447,9 @@ int YabSaveStateStream(FILE *fp)
 
    YuiSwapBuffers();
    #ifdef USE_OPENGL
+   #ifndef _OGL32_
    glPixelZoom(1,1);
+   #endif
    glReadBuffer(GL_BACK);
    glReadPixels(0, 0, outputwidth, outputheight, GL_RGBA, GL_UNSIGNED_BYTE, buf);
    #else
@@ -1708,16 +1710,24 @@ int YabLoadStateStream(FILE *fp)
    YuiSwapBuffers();
 
    #ifdef USE_OPENGL
+   #ifdef _OGL32_
+   #warning TODO: Implement OpenGL 3.2 Core!
+   #else
    if(VIDCore->id == VIDCORE_SOFT)
      glRasterPos2i(0, outputheight);
    if(VIDCore->id == VIDCORE_OGL)
 	 glRasterPos2i(0, outputheight/2);
    #endif
+   #endif
 
    VIDCore->GetGlSize(&curroutputwidth, &curroutputheight);
    #ifdef USE_OPENGL
+   #ifdef _OGL32_
+   #warning TODO: Implement OpenGL 3.2 Core!
+   #else
    glPixelZoom((float)curroutputwidth / (float)outputwidth, ((float)curroutputheight / (float)outputheight));
    glDrawPixels(outputwidth, outputheight, GL_RGBA, GL_UNSIGNED_BYTE, buf);
+   #endif
    #endif
    YuiSwapBuffers();
    free(buf);

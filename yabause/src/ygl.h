@@ -39,9 +39,8 @@
   #endif
 
 #elif  defined(__APPLE__)
-    #define GL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED
-    #include <OpenGL/gl.h>
     #include <OpenGL/gl3.h>
+    #define _OGL32_ // Mac OS X only implements OpenGL 3.2 Core: calling pre-3.0 GL code is invalid in these contexts.
 
 #else // Linux?
     #if defined(_OGLES3_)||defined(_OGL3_)
@@ -52,6 +51,10 @@
     #else
         #include <GL/gl.h>
     #endif
+#endif
+
+#if defined(_OGL32_) && !defined(_OGL3_)
+#define _OGL3_
 #endif
 
 #include <stdarg.h>

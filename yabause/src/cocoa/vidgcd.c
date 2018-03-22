@@ -1544,6 +1544,9 @@ int VIDGCDInit(void)
    vdp2height = 224;
 
 #ifdef USE_OPENGL
+#ifdef _OGL32_
+#warning TODO: Implement OpenGL 3.2 Core!
+#else
    glClear(GL_COLOR_BUFFER_BIT);
 
    glMatrixMode(GL_PROJECTION);
@@ -1555,6 +1558,7 @@ int VIDGCDInit(void)
    glOrtho(-320, 320, -224, 224, 1, 0);
    outputwidth = 320;
    outputheight = 224;
+#endif
 #endif
 
    return 0;
@@ -1587,6 +1591,9 @@ static int IsFullscreen = 0;
 void VIDGCDResize(unsigned int w, unsigned int h, int on)
 {
 #ifdef USE_OPENGL
+#ifdef _OGL32_
+#warning TODO: Implement OpenGL 3.2 Core!
+#else
    IsFullscreen = on;
 
    glClear(GL_COLOR_BUFFER_BIT);
@@ -1602,6 +1609,7 @@ void VIDGCDResize(unsigned int w, unsigned int h, int on)
    glViewport(0, 0, w, h);
    outputwidth = w;
    outputheight = h;
+#endif
 #endif
 }
 
@@ -2950,6 +2958,9 @@ void VIDGCDVdp2DrawEnd(void)
       OSDDisplayMessages(dispbuffer, vdp2width, vdp2height);
 
 #ifdef USE_OPENGL
+#ifdef _OGL32_
+#warning TODO: Implement OpenGL 3.2 Core!
+#else
    glRasterPos2i(0, 0);
    glPixelZoom((float)outputwidth / (float)vdp2width, 0 - ((float)outputheight / (float)vdp2height));
 #ifndef CRAB_REWRITE
@@ -2961,6 +2972,7 @@ void VIDGCDVdp2DrawEnd(void)
 
    if (! OSDUseBuffer())
       OSDDisplayMessages(NULL, -1, -1);
+#endif
 #endif
 
    YuiSwapBuffers();
