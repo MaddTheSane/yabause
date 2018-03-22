@@ -73,10 +73,10 @@
 - (IBAction)buttonSetOk:(id)sender;
 - (IBAction)buttonSetCancel:(id)sender;
 
-- (int)cartType;
-- (int)region;
-- (int)soundCore;
-- (int)videoCore;
+@property (readonly) int cartType;
+@property (readonly) int region;
+@property (readonly) int soundCore;
+@property (readonly) int videoCore;
 - (NSString *)biosPath;
 - (NSString *)sh1Path;
 - (BOOL)cdbLLE;

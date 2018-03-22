@@ -31,6 +31,9 @@
 #include "vidgcd.h"
 #include "cs0.h"
 #include "vdp2.h"
+#ifdef HAVE_LIBAL
+#include "sndal.h"
+#endif
 
 #include "PerCocoa.h"
 #include "YabauseController.h"
@@ -70,6 +73,9 @@ CDInterface *CDCoreList[] = {
 SoundInterface_struct *SNDCoreList[] = {
     &SNDDummy,
     &SNDMac,
+#ifdef HAVE_LIBAL
+    &SNDAL,
+#endif
     NULL
 };
 

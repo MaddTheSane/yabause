@@ -471,25 +471,10 @@
     [NSApp stopModalWithCode:NSCancelButton];
 }
 
-- (int)cartType
-{
-    return _cartType;
-}
-
-- (int)region
-{
-    return _region;
-}
-
-- (int)soundCore
-{
-    return _soundCore;
-}
-
-- (int)videoCore
-{
-    return _videoCore;
-}
+@synthesize cartType=_cartType;
+@synthesize region=_region;
+@synthesize soundCore=_soundCore;
+@synthesize videoCore=_videoCore;
 
 - (NSString *)biosPath
 {

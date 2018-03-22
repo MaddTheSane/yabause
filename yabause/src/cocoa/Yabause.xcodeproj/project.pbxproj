@@ -78,6 +78,8 @@
 		554552D220630E0400ADE907 /* mpeg_card.c in Sources */ = {isa = PBXBuildFile; fileRef = 554552D020630E0300ADE907 /* mpeg_card.c */; };
 		554552D520630E6200ADE907 /* scspdsp.c in Sources */ = {isa = PBXBuildFile; fileRef = 554552D420630E6100ADE907 /* scspdsp.c */; };
 		554552D820630E9200ADE907 /* cd_drive.c in Sources */ = {isa = PBXBuildFile; fileRef = 554552D620630E9100ADE907 /* cd_drive.c */; };
+		558C7BE42063336B009CE1F5 /* sndal.c in Sources */ = {isa = PBXBuildFile; fileRef = 558C7BE32063336B009CE1F5 /* sndal.c */; };
+		558C7BE620633397009CE1F5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558C7BE520633397009CE1F5 /* OpenAL.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -238,6 +240,9 @@
 		554552D420630E6100ADE907 /* scspdsp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scspdsp.c; sourceTree = "<group>"; };
 		554552D620630E9100ADE907 /* cd_drive.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cd_drive.c; sourceTree = "<group>"; };
 		554552D720630E9200ADE907 /* cd_drive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cd_drive.h; sourceTree = "<group>"; };
+		558C7BE22063336B009CE1F5 /* sndal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndal.h; sourceTree = "<group>"; };
+		558C7BE32063336B009CE1F5 /* sndal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndal.c; sourceTree = "<group>"; };
+		558C7BE520633397009CE1F5 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* Yabause-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Yabause-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Yabause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yabause.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07BF9E314A1C2C500775818 /* yglshaderes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yglshaderes.c; sourceTree = "<group>"; };
@@ -259,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558C7BE620633397009CE1F5 /* OpenAL.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				2A7D3A1E115BA29F00DE3BD1 /* OpenGL.framework in Frameworks */,
 				2A7D3A31115BA35200DE3BD1 /* CoreFoundation.framework in Frameworks */,
@@ -332,6 +338,7 @@
 			);
 			name = Yabause;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
@@ -360,6 +367,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				558C7BE520633397009CE1F5 /* OpenAL.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
@@ -446,6 +454,8 @@
 				2AD10F99118BBC850088FB2C /* snddummy.c */,
 				2A9D75FE116645D700A580EB /* sndmac.c */,
 				2A9D75FF116645D700A580EB /* sndmac.h */,
+				558C7BE32063336B009CE1F5 /* sndal.c */,
+				558C7BE22063336B009CE1F5 /* sndal.h */,
 				2AD10F9A118BBC850088FB2C /* sndwav.c */,
 				2AD10F9B118BBC850088FB2C /* thr-dummy.c */,
 				554552B62063089700ADE907 /* thr-linux.c */,
@@ -619,6 +629,21 @@
 			name = "Run gen68k";
 			outputPaths = (
 				"$(PROJECT_DIR)/../gen68k/c68k_op0.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op1.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op2.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op3.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op4.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op5.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op6.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op7.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op8.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_op9.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_opA.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_opB.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_opC.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_opD.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_opE.inc",
+				"$(PROJECT_DIR)/../gen68k/c68k_opF.inc",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -682,6 +707,7 @@
 				2A7D39F2115BA16100DE3BD1 /* vdp2.c in Sources */,
 				2A7D39F3115BA16100DE3BD1 /* vdp2debug.c in Sources */,
 				2A7D39F4115BA16100DE3BD1 /* vidogl.c in Sources */,
+				558C7BE42063336B009CE1F5 /* sndal.c in Sources */,
 				2A7D39F5115BA16100DE3BD1 /* vidshared.c in Sources */,
 				2A7D39F6115BA16100DE3BD1 /* vidgcd.c in Sources */,
 				2A7D39F7115BA16100DE3BD1 /* yabause.c in Sources */,
@@ -774,7 +800,6 @@
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_NO_COMMON_BLOCKS = NO;
-				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_UNROLL_LOOPS = YES;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Yabause-Info.plist";
@@ -815,12 +840,14 @@
 					CRAB_REWRITE,
 					NO_CLI,
 					HAVE_LIBGL,
+					HAVE_LIBAL,
 					HAVE_LIBGLUT,
 					HAVE_SYS_TIME_H,
 					HAVE_GETTIMEOFDAY,
 					HAVE_STRCASECMP,
-					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1)",
 					HAVE_C68K,
+					_OGL3_,
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1 = "VERSION=\\\"0.9.15\\\"";
 				GCC_VERSION = "";
@@ -845,12 +872,14 @@
 					CRAB_REWRITE,
 					NO_CLI,
 					HAVE_LIBGL,
+					HAVE_LIBAL,
 					HAVE_LIBGLUT,
 					HAVE_SYS_TIME_H,
 					HAVE_GETTIMEOFDAY,
 					HAVE_STRCASECMP,
-					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1)",
 					HAVE_C68K,
+					_OGL3_,
+					"$(GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS_QUOTED_FOR_PROJECT_1 = "VERSION=\\\"0.9.15\\\"";
 				GCC_VERSION = "";
