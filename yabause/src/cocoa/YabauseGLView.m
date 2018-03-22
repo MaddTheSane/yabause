@@ -47,6 +47,7 @@
 
     if(fmt == nil)  {
         [fmt release];
+        [self release];
         return nil;
     }
 

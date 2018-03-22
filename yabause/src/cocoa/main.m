@@ -34,6 +34,9 @@
 #ifdef HAVE_LIBAL
 #include "sndal.h"
 #endif
+#if defined(DEBUG) && DEBUG
+#include "debug.h"
+#endif
 
 #include "PerCocoa.h"
 #include "YabauseController.h"
@@ -99,5 +102,8 @@ void YuiSwapBuffers(void) {
 }
 
 int main(int argc, char *argv[]) {
+#if defined(DEBUG) && DEBUG
+    LogStart();
+#endif
     return NSApplicationMain(argc,  (const char **) argv);
 }

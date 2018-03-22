@@ -47,7 +47,6 @@
 		2A7D39F5115BA16100DE3BD1 /* vidshared.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D39CA115BA16100DE3BD1 /* vidshared.c */; };
 		2A7D39F6115BA16100DE3BD1 /* vidgcd.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D39CC115BA16100DE3BD1 /* vidgcd.c */; };
 		2A7D39F7115BA16100DE3BD1 /* yabause.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D39CE115BA16100DE3BD1 /* yabause.c */; };
-		2A7D39F8115BA16100DE3BD1 /* ygles.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D39D0115BA16100DE3BD1 /* ygles.c */; };
 		2A7D3A1E115BA29F00DE3BD1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7D3A1D115BA29F00DE3BD1 /* OpenGL.framework */; };
 		2A7D3A31115BA35200DE3BD1 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7D3A30115BA35200DE3BD1 /* CoreFoundation.framework */; };
 		2A7D3A33115BA35200DE3BD1 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7D3A32115BA35200DE3BD1 /* IOKit.framework */; };
@@ -85,6 +84,7 @@
 		554AD977206444440032B889 /* OSD_MacUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD976206444440032B889 /* OSD_MacUI.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		554AD97D206447E70032B889 /* YabauseMacOSD.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD97B206447E70032B889 /* YabauseMacOSD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		554AD97E206447E70032B889 /* MacOSD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554AD97C206447E70032B889 /* MacOSD.xib */; };
+		554AD981206473400032B889 /* ygl-mac.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD980206473400032B889 /* ygl-mac.c */; };
 		558C7BE42063336B009CE1F5 /* sndal.c in Sources */ = {isa = PBXBuildFile; fileRef = 558C7BE32063336B009CE1F5 /* sndal.c */; };
 		558C7BE620633397009CE1F5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558C7BE520633397009CE1F5 /* OpenAL.framework */; };
 		55BE7EEB2063741700400111 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55BE7EEA20636F6A00400111 /* Media.xcassets */; };
@@ -290,6 +290,7 @@
 		554AD97A206447E70032B889 /* YabauseMacOSD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YabauseMacOSD.h; sourceTree = "<group>"; };
 		554AD97B206447E70032B889 /* YabauseMacOSD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YabauseMacOSD.m; sourceTree = "<group>"; };
 		554AD97C206447E70032B889 /* MacOSD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MacOSD.xib; sourceTree = "<group>"; };
+		554AD980206473400032B889 /* ygl-mac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "ygl-mac.c"; sourceTree = "<group>"; };
 		558C7BE22063336B009CE1F5 /* sndal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndal.h; sourceTree = "<group>"; };
 		558C7BE32063336B009CE1F5 /* sndal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndal.c; sourceTree = "<group>"; };
 		558C7BE520633397009CE1F5 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -404,6 +405,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				554AD980206473400032B889 /* ygl-mac.c */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 				2A82CC9F116171DB00F15B02 /* PerCocoa.h */,
 				2A82CCA0116171DB00F15B02 /* PerCocoa.m */,
@@ -877,6 +879,7 @@
 				2A7D39EA115BA16100DE3BD1 /* sh2core.c in Sources */,
 				2A7D39EB115BA16100DE3BD1 /* sh2d.c in Sources */,
 				554552C220630C8B00ADE907 /* yab_tsunami.c in Sources */,
+				554AD981206473400032B889 /* ygl-mac.c in Sources */,
 				2A7D39EC115BA16100DE3BD1 /* sh2idle.c in Sources */,
 				2A7D39ED115BA16100DE3BD1 /* sh2int.c in Sources */,
 				554552D220630E0400ADE907 /* mpeg_card.c in Sources */,
@@ -893,7 +896,6 @@
 				554AD977206444440032B889 /* OSD_MacUI.m in Sources */,
 				2A7D39F6115BA16100DE3BD1 /* vidgcd.c in Sources */,
 				2A7D39F7115BA16100DE3BD1 /* yabause.c in Sources */,
-				2A7D39F8115BA16100DE3BD1 /* ygles.c in Sources */,
 				2A7D3A48115BA3AF00DE3BD1 /* c68k.c in Sources */,
 				2A7D3A49115BA3AF00DE3BD1 /* c68kexec.c in Sources */,
 				554552C920630D4800ADE907 /* yglcache.c in Sources */,
@@ -1088,6 +1090,8 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					USING_COCOA,
 					"$(inherited)",
+					"DEBUG=1",
+					YGL_DEBUG,
 				);
 				GCC_UNROLL_LOOPS = YES;
 				GCC_VERSION = "";

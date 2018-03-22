@@ -40,6 +40,7 @@
 
 #elif  defined(__APPLE__)
     #include <OpenGL/gl3.h>
+    #include <OpenGL/gl3ext.h>
     #define _OGL32_ // Mac OS X only implements OpenGL 3.2 Core: calling pre-3.0 GL code is invalid in these contexts.
 
 #else // Linux?
