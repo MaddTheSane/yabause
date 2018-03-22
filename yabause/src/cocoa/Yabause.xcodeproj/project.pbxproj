@@ -595,8 +595,10 @@
 				554AD94320642CF10032B889 /* readme.txt */,
 				554AD94420642CF10032B889 /* m68k_in.c */,
 			);
+			indentWidth = 4;
 			path = musashi;
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		554AD95820642FEE0032B889 /* Generated Sources */ = {
 			isa = PBXGroup;
@@ -785,6 +787,9 @@
 			);
 			inputPaths = (
 				"$(PROJECT_DIR)/../musashi/m68k_in.c",
+				"$(PROJECT_DIR)/../musashi/m68kmake.c",
+				"$(PROJECT_DIR)/../musashi/m68k.h",
+				"$(PROJECT_DIR)/../musashi/m68kcpu.h",
 			);
 			outputPaths = (
 				"$(PROJECT_DIR)/../musashi/m68kops.h",

@@ -218,9 +218,9 @@ typedef struct
 /* Function Prototypes */
 void error_exit(char* fmt, ...);
 void perror_exit(char* fmt, ...);
-int check_strsncpy(char* dst, char* src, int maxlength);
-int check_atoi(char* str, int *result);
-int skip_spaces(char* str);
+size_t check_strsncpy(char* dst, char* src, int maxlength);
+size_t check_atoi(char* str, int *result);
+size_t skip_spaces(char* str);
 int num_bits(int value);
 int atoh(char* buff);
 int fgetline(char* buff, int nchars, FILE* file);
@@ -492,7 +492,7 @@ void perror_exit(char* fmt, ...)
 
 
 /* copy until 0 or space and exit with error if we read too far */
-int check_strsncpy(char* dst, char* src, int maxlength)
+size_t check_strsncpy(char* dst, char* src, int maxlength)
 {
 	char* p = dst;
 	while(*src && *src != ' ')
@@ -506,7 +506,7 @@ int check_strsncpy(char* dst, char* src, int maxlength)
 }
 
 /* copy until 0 or specified character and exit with error if we read too far */
-int check_strcncpy(char* dst, char* src, char delim, int maxlength)
+size_t check_strcncpy(char* dst, char* src, char delim, int maxlength)
 {
 	char* p = dst;
 	while(*src && *src != delim)
@@ -520,7 +520,7 @@ int check_strcncpy(char* dst, char* src, char delim, int maxlength)
 }
 
 /* convert ascii to integer and exit with error if we find invalid data */
-int check_atoi(char* str, int *result)
+size_t check_atoi(char* str, int *result)
 {
 	int accum = 0;
 	char* p = str;
@@ -536,7 +536,7 @@ int check_atoi(char* str, int *result)
 }
 
 /* Skip past spaces in a string */
-int skip_spaces(char* str)
+size_t skip_spaces(char* str)
 {
 	char* p = str;
 
@@ -588,7 +588,7 @@ int fgetline(char* buff, int nchars, FILE* file)
 	if(buff[0] == '\r')
 		memcpy(buff, buff + 1, nchars - 1);
 
-	length = strlen(buff);
+	length = (int)strlen(buff);
 	while(length && (buff[length-1] == '\r' || buff[length-1] == '\n'))
 		length--;
 	buff[length] = 0;
@@ -649,7 +649,7 @@ opcode_struct* find_opcode(char* name, int size, char* spec_proc, char* spec_ea)
 	opcode_struct* op;
 
 
-	for(op = g_opcode_input_table;op->name != NULL;op++)
+	for(op = g_opcode_input_table; strlen(op->name) != 0;op++)
 	{
 		if(	strcmp(name, op->name) == 0 &&
 			(size == op->size) &&
@@ -665,7 +665,7 @@ opcode_struct* find_illegal_opcode(void)
 {
 	opcode_struct* op;
 
-	for(op = g_opcode_input_table;op->name != NULL;op++)
+	for(op = g_opcode_input_table;strlen(op->name) != 0;op++)
 	{
 		if(strcmp(op->name, "illegal") == 0)
 			return op;
