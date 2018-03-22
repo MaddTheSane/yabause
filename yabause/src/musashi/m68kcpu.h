@@ -523,6 +523,13 @@
 				CPU_INT_CYCLES = 0; \
 				return m68ki_initial_cycles; \
 			} \
+			/* ensure we don't re-enter execution loop after an
+			   address error if there's no more cycles remaining */ \
+			if(GET_CYCLES() <= 0) \
+			{ \
+				/* return how many clocks we used */ \
+				return m68ki_initial_cycles - GET_CYCLES(); \
+			} \
 		}
 
 	#define m68ki_check_address_error(ADDR, WRITE_MODE, FC) \
@@ -1542,7 +1549,7 @@ INLINE void m68ki_stack_frame_buserr(uint sr)
 /* Format 8 stack frame (68010).
  * 68010 only.  This is the 29 word bus/address error frame.
  */
-INLINE void m68ki_stack_frame_1000(uint pc, uint sr, uint vector)
+void m68ki_stack_frame_1000(uint pc, uint sr, uint vector)
 {
 	/* VERSION
 	 * NUMBER
@@ -1596,7 +1603,7 @@ INLINE void m68ki_stack_frame_1000(uint pc, uint sr, uint vector)
  * if the error happens at an instruction boundary.
  * PC stacked is address of next instruction.
  */
-INLINE void m68ki_stack_frame_1010(uint sr, uint vector, uint pc)
+void m68ki_stack_frame_1010(uint sr, uint vector, uint pc)
 {
 	/* INTERNAL REGISTER */
 	m68ki_push_16(0);
@@ -1643,7 +1650,7 @@ INLINE void m68ki_stack_frame_1010(uint sr, uint vector, uint pc)
  * if the error happens during instruction execution.
  * PC stacked is address of instruction in progress.
  */
-INLINE void m68ki_stack_frame_1011(uint sr, uint vector, uint pc)
+void m68ki_stack_frame_1011(uint sr, uint vector, uint pc)
 {
 	/* INTERNAL REGISTERS (18 words) */
 	m68ki_push_32(0);
@@ -1725,8 +1732,8 @@ INLINE void m68ki_exception_trap(uint vector)
 
 	m68ki_jump_vector(vector);
 
-	/* Use up some clock cycles */
-	USE_CYCLES(CYC_EXCEPTION[vector]);
+	/* Use up some clock cycles and undo the instruction's cycles */
+	USE_CYCLES(CYC_EXCEPTION[vector] - CYC_INSTRUCTION[REG_IR]);
 }
 
 /* Trap#n stacks a 0 frame but behaves like group2 otherwise */
@@ -1736,8 +1743,8 @@ INLINE void m68ki_exception_trapN(uint vector)
 	m68ki_stack_frame_0000(REG_PC, sr, vector);
 	m68ki_jump_vector(vector);
 
-	/* Use up some clock cycles */
-	USE_CYCLES(CYC_EXCEPTION[vector]);
+	/* Use up some clock cycles and undo the instruction's cycles */
+	USE_CYCLES(CYC_EXCEPTION[vector] - CYC_INSTRUCTION[REG_IR]);
 }
 
 /* Exception for trace mode */
@@ -1881,13 +1888,16 @@ m68k_read_memory_8(0x00ffff01);
 
 	m68ki_jump_vector(EXCEPTION_ADDRESS_ERROR);
 
-	/* Use up some clock cycles and undo the instruction's cycles */
-	USE_CYCLES(CYC_EXCEPTION[EXCEPTION_ADDRESS_ERROR] - CYC_INSTRUCTION[REG_IR]);
+	/* Use up some clock cycles. Note that we don't need to undo the 
+	instruction's cycles here as we've longjmp:ed directly from the
+	instruction handler without passing the part of the excecute loop
+	that deducts instruction cycles */
+	USE_CYCLES(CYC_EXCEPTION[EXCEPTION_ADDRESS_ERROR]); 
 }
 
 
 /* Service an interrupt request and start exception processing */
-INLINE void m68ki_exception_interrupt(uint int_level)
+void m68ki_exception_interrupt(uint int_level)
 {
 	uint vector;
 	uint sr;
