@@ -460,6 +460,9 @@
                                                             <menu key="menu" title="OtherViews" id="929">
                                                                 <items>
                                                                     <menuItem title="Software Video Core" state="on" tag="2" id="931"/>
+                                                                    <menuItem title="OpenGL Video Core" tag="1" id="fAX-p3-Xc6">
+                                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                                    </menuItem>
                                                                     <menuItem title="GCD Video Core" tag="10" id="iwj-eM-q7K">
                                                                         <modifierMask key="keyEquivalentModifierMask"/>
                                                                     </menuItem>

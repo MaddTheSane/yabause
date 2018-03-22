@@ -24,8 +24,8 @@
 
 @interface YabauseGLView (InternalFunctions)
 /* These are nice to have, but not really necessary to things... */
-- (float)width;
-- (float)height;
+- (CGFloat)width;
+- (CGFloat)height;
 @end
 
 @implementation YabauseGLView
@@ -168,12 +168,12 @@
 
 @implementation YabauseGLView (InternalFunctions)
 
-- (float)width
+- (CGFloat)width
 {
     return [self bounds].size.width;
 }
 
-- (float)height
+- (CGFloat)height
 {
     return [self bounds].size.height;
 }

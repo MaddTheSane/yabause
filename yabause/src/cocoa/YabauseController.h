@@ -25,7 +25,7 @@
 @class YabauseGLView;
 @class YabausePrefsController;
 
-@interface YabauseController : NSObject {
+@interface YabauseController : NSObject <NSApplicationDelegate, NSWindowDelegate> {
     IBOutlet YabauseGLView *view;
     IBOutlet NSPanel *prefsPane;
     IBOutlet YabausePrefsController *prefs;
@@ -40,15 +40,6 @@
     char *_isoFile;
     BOOL _doneExecuting;
 }
-
-- (void)awakeFromNib;
-- (void)dealloc;
-
-/* NSWindow delegate methods */
-- (BOOL)windowShouldClose:(id)sender;
-
-/* NSApplication delegate methods */
-- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)app;
 
 - (IBAction)showPreferences:(id)sender;
 - (IBAction)runBIOS:(id)sender;

@@ -38,7 +38,7 @@
 
 YabauseController *controller;
 
-@interface YabauseController (InternalFunctions)
+@interface YabauseController ()
 - (void)startEmulationWithCDCore:(int)cdcore CDPath:(const char *)fn;
 - (void)emulationThread:(id)ignored;
 - (void)terminateEmulation;
@@ -234,10 +234,6 @@ static void FlipToggle(NSMenuItem *item) {
     return view;
 }
 
-@end /* @implementation YabauseController */
-
-@implementation YabauseController (InternalFunctions)
-
 - (void)startEmulationWithCDCore:(int)cdcore CDPath:(const char *)fn
 {
     if(!_running) {
@@ -256,11 +252,18 @@ static void FlipToggle(NSMenuItem *item) {
         yinit.cdcoretype = cdcore;
         yinit.carttype = [prefs cartType];
         yinit.regionid = [prefs region];
-        yinit.biospath = ([bios length] > 0 && ![prefs emulateBios]) ?
-            [bios UTF8String] : NULL;
+        if ([bios length] > 0 && ![prefs emulateBios]) {
+            yinit.biospath = strdup(bios.fileSystemRepresentation);
+        } else {
+            yinit.biospath = NULL;
+        }
         yinit.cdpath = fn;
         yinit.buppath = NULL;
-        yinit.mpegpath = ([mpeg length] > 0) ? [mpeg UTF8String] : NULL;
+        if ([mpeg length] > 0) {
+            yinit.mpegpath = strdup(mpeg.fileSystemRepresentation);
+        } else {
+            yinit.mpegpath = NULL;
+        }
         yinit.videoformattype = ([prefs region] < 10) ? VIDEOFORMATTYPE_NTSC :
             VIDEOFORMATTYPE_PAL;
         yinit.frameskip = [frameskip state] == NSOnState;
@@ -282,7 +285,7 @@ static void FlipToggle(NSMenuItem *item) {
 		
 		if([prefs cdbLLE] && [sh1 length] > 0)
 		{
-			yinit.sh1rompath = [sh1 UTF8String];
+			yinit.sh1rompath = strdup([sh1 fileSystemRepresentation]);
 		
 			yinit.use_cd_block_lle = 1;
 			yinit.use_scu_dma_timing = 1;
@@ -296,7 +299,7 @@ static void FlipToggle(NSMenuItem *item) {
 
         /* Set up the internal save ram if specified. */
         if([bram length] > 0) {
-            const char *tmp = [bram UTF8String];
+            const char *tmp = [bram fileSystemRepresentation];
             yinit.buppath = _bramFile = strdup(tmp);
         }
 
@@ -306,12 +309,19 @@ static void FlipToggle(NSMenuItem *item) {
         /* Set up the cartridge stuff based on what was selected. */
         if(yinit.carttype == CART_NETLINK) {
             yinit.cartpath = NULL;
-            yinit.modemip = ([cart length] > 0) ?
-                [cart UTF8String] : NULL;
+            if ([cart length] > 0) {
+                yinit.modemip = strdup(cart.fileSystemRepresentation);
+            } else {
+                yinit.modemip = NULL;
+            }
             yinit.modemport = NULL;
         }
         else {
-            yinit.cartpath = ([cart length] > 0) ? [cart UTF8String] : NULL;
+            if ([cart length] > 0) {
+                yinit.cartpath = strdup(cart.fileSystemRepresentation);
+            } else {
+                yinit.cartpath = NULL;
+            }
             yinit.modemip = NULL;
             yinit.modemport = NULL;
         }
@@ -361,7 +371,7 @@ static void FlipToggle(NSMenuItem *item) {
 
     ScspUnMuteAudio(SCSP_MUTE_SYSTEM);
 
-    while(_running) {
+    while(_running) @autoreleasepool {
         /* If we get paused from the GUI, we'll end up waiting in this lock
            here... Maybe not the most clear way to do it, but it works. */
         [_runLock lock];
@@ -407,4 +417,5 @@ static void FlipToggle(NSMenuItem *item) {
     }
 }
 
-@end /* @implementation YabauseController (InternalFunctions) */
+@end /* @implementation YabauseController */
+

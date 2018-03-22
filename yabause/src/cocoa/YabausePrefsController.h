@@ -22,7 +22,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface YabausePrefsController : NSObject {
+@interface YabausePrefsController : NSObject <NSTextFieldDelegate> {
     IBOutlet NSTextField *biosPath;
 	IBOutlet NSTextField *sh1Path;
     IBOutlet NSTextField *bramPath;
@@ -49,12 +49,6 @@
     NSUserDefaults *_prefs;
 }
 
-- (void)awakeFromNib;
-- (void)dealloc;
-
-/* NSTextField delegate methods */
-- (void)controlTextDidEndEditing:(NSNotification *)notification;
-
 - (IBAction)cartSelected:(id)sender;
 - (IBAction)regionSelected:(id)sender;
 - (IBAction)soundCoreSelected:(id)sender;
@@ -77,15 +71,15 @@
 @property (readonly) int region;
 @property (readonly) int soundCore;
 @property (readonly) int videoCore;
-- (NSString *)biosPath;
-- (NSString *)sh1Path;
-- (BOOL)cdbLLE;
-- (BOOL)emulateBios;
-- (BOOL)newScsp;
-- (BOOL)enableThreads;
-- (NSString *)mpegPath;
-- (NSString *)bramPath;
-- (NSString *)cartPath;
+@property (readonly, retain) NSString *biosPath;
+@property (readonly, retain) NSString *sh1Path;
+@property (readonly) BOOL cdbLLE;
+@property (readonly) BOOL emulateBios;
+@property (readonly) BOOL newScsp;
+@property (readonly) BOOL enableThreads;
+@property (readonly, retain) NSString *mpegPath;
+@property (readonly, retain) NSString *bramPath;
+@property (readonly, retain) NSString *cartPath;
 
 @end
 
