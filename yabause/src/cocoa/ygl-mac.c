@@ -738,9 +738,9 @@ int YglGLInit(int width, int height) {
 #ifdef _OGL3_
    {
       GLint n, i;
-      glGetIntegerv(GL_NUM_EXTENSIONS, &n);
+      DEBUGGL(glGetIntegerv(GL_NUM_EXTENSIONS, &n));
       for (i = 0; i < n; i++) {
-         extensions = (const char*)glGetStringi(GL_EXTENSIONS, i);
+         DEBUGGL(extensions = (const char*)glGetStringi(GL_EXTENSIONS, i));
          if (strstr(extensions, "packed_depth_stencil") != NULL)
          {
             has_packed_depth_stencil = true;
@@ -785,18 +785,18 @@ int YglGLInit(int width, int height) {
    {
       YGLLOG("YglGLInit:Framebuffer status = %08X\n", status );
    }
-   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+   DEBUGGL(glClearColor(0.0f, 0.0f, 0.0f, 0.0f));
+   DEBUGGL(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT));
 
-   glBindFramebuffer(GL_FRAMEBUFFER, _Ygl->vdp1fbo);
-   glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, _Ygl->vdp1FrameBuff[1], 0);
-   glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, _Ygl->rboid_depth);
-   glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_STENCIL_ATTACHMENT, GL_RENDERBUFFER, _Ygl->rboid_stencil);
-   glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+   DEBUGGL(glBindFramebuffer(GL_FRAMEBUFFER, _Ygl->vdp1fbo));
+   DEBUGGL(glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, _Ygl->vdp1FrameBuff[1], 0));
+   DEBUGGL(glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, _Ygl->rboid_depth));
+   DEBUGGL(glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_STENCIL_ATTACHMENT, GL_RENDERBUFFER, _Ygl->rboid_stencil));
+   DEBUGGL(glClearColor(0.0f, 0.0f, 0.0f, 0.0f));
+   DEBUGGL(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT));
 
-   glBindFramebuffer(GL_FRAMEBUFFER, 0 );
-   glBindTexture(GL_TEXTURE_2D,_Ygl->texture);
+   DEBUGGL(glBindFramebuffer(GL_FRAMEBUFFER, 0 ));
+   DEBUGGL(glBindTexture(GL_TEXTURE_2D,_Ygl->texture));
 
 
 
@@ -955,7 +955,7 @@ int YglInit(int width, int height, unsigned int depth) {
    _Ygl->smallfbo = 0;
    _Ygl->smallfbotex = 0;
 
-   glBindFramebuffer(GL_FRAMEBUFFER, 0 );
+   DEBUGGL(glBindFramebuffer(GL_FRAMEBUFFER, 0 ));
 
    _Ygl->st = 0;
    _Ygl->msglength = 0;

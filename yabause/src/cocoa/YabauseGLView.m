@@ -55,6 +55,8 @@
         [fmt release];
         return nil;
     }
+    
+    CGLEnable([self.openGLContext CGLContextObj], kCGLCECrashOnRemovedFunctions);
 
     _isFullscreen = NO;
 
