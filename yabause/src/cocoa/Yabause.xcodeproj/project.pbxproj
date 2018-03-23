@@ -53,7 +53,7 @@
 		2A7D3A48115BA3AF00DE3BD1 /* c68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D3A41115BA3AF00DE3BD1 /* c68k.c */; };
 		2A7D3A49115BA3AF00DE3BD1 /* c68kexec.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D3A43115BA3AF00DE3BD1 /* c68kexec.c */; settings = {COMPILER_FLAGS = "-O0"; }; };
 		2A7D3A4B115BA3AF00DE3BD1 /* gen68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D3A45115BA3AF00DE3BD1 /* gen68k.c */; };
-		2A7D3A5A115BA41200DE3BD1 /* gen68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D3A45115BA3AF00DE3BD1 /* gen68k.c */; };
+		2A7D3A5A115BA41200DE3BD1 /* gen68k.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D3A45115BA3AF00DE3BD1 /* gen68k.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2A7D3A9B115BAB9E00DE3BD1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A7D3A99115BAB9E00DE3BD1 /* MainMenu.xib */; };
 		2A82CCA1116171DB00F15B02 /* PerCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82CCA0116171DB00F15B02 /* PerCocoa.m */; };
 		2A9D7600116645D700A580EB /* sndmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D75FE116645D700A580EB /* sndmac.c */; };
@@ -81,8 +81,8 @@
 		554AD95F2064300A0032B889 /* m68kopac.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD95A2064300A0032B889 /* m68kopac.c */; };
 		554AD9602064300A0032B889 /* m68kopdm.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD95B2064300A0032B889 /* m68kopdm.c */; };
 		554AD9612064300A0032B889 /* m68kops.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD95C2064300A0032B889 /* m68kops.c */; };
-		554AD977206444440032B889 /* OSD_MacUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD976206444440032B889 /* OSD_MacUI.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		554AD97D206447E70032B889 /* YabauseMacOSD.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD97B206447E70032B889 /* YabauseMacOSD.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		554AD977206444440032B889 /* OSD_MacUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD976206444440032B889 /* OSD_MacUI.m */; };
+		554AD97D206447E70032B889 /* YabauseMacOSD.m in Sources */ = {isa = PBXBuildFile; fileRef = 554AD97B206447E70032B889 /* YabauseMacOSD.m */; };
 		554AD97E206447E70032B889 /* MacOSD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 554AD97C206447E70032B889 /* MacOSD.xib */; };
 		554AD981206473400032B889 /* ygl-mac.c in Sources */ = {isa = PBXBuildFile; fileRef = 554AD980206473400032B889 /* ygl-mac.c */; };
 		558C7BE42063336B009CE1F5 /* sndal.c in Sources */ = {isa = PBXBuildFile; fileRef = 558C7BE32063336B009CE1F5 /* sndal.c */; };
@@ -957,6 +957,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = C68K_GEN;
@@ -971,6 +972,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = C68K_GEN;
@@ -1082,6 +1084,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Yabause;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_OPENMP_SUPPORT = NO;
@@ -1107,6 +1110,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = Yabause;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				ENABLE_OPENMP_SUPPORT = NO;
 				GCC_NO_COMMON_BLOCKS = NO;

@@ -75,7 +75,7 @@
     _soundCore = SNDCORE_MAC;
     _videoCore = VIDCORE_SOFT;
 
-    _prefs = [[NSUserDefaults standardUserDefaults] retain];
+    _prefs = [NSUserDefaults standardUserDefaults];
 
     /* Fill in all the settings. */
     if([_prefs stringForKey:BiosPathPrefKey]) {
@@ -92,37 +92,37 @@
     else {
         [_prefs setBool:YES forKey:BiosEmulatePrefKey];
     }
-	
-	if([_prefs stringForKey:SH1RomPathPrefKey]) {
-		[sh1Path setStringValue:[_prefs stringForKey:SH1RomPathPrefKey]];
-	}
-	else {
-		[_prefs setObject:@"" forKey:SH1RomPathPrefKey];
-	}
-	
-	if([_prefs objectForKey:CDBlockLLEOnPrefKey]) {
-		[cdbLLE setState:[_prefs boolForKey:CDBlockLLEOnPrefKey] ?
-				   NSOnState : NSOffState];
-	}
-	else {
-		[_prefs setBool:NO forKey:CDBlockLLEOnPrefKey];
-	}
-	
-	if([_prefs objectForKey:HQSoundPrefKey]) {
-		[newScsp setState:[_prefs boolForKey:HQSoundPrefKey] ?
-				   NSOnState : NSOffState];
-	}
-	else {
-		[_prefs setBool:YES forKey:HQSoundPrefKey];
-	}
-	
-	if([_prefs objectForKey:MultithreadingOnPrefKey]) {
-		[enableThreads setState:[_prefs boolForKey:MultithreadingOnPrefKey] ?
-				   NSOnState : NSOffState];
-	}
-	else {
-		[_prefs setBool:YES forKey:MultithreadingOnPrefKey];
-	}
+    
+    if([_prefs stringForKey:SH1RomPathPrefKey]) {
+        [sh1Path setStringValue:[_prefs stringForKey:SH1RomPathPrefKey]];
+    }
+    else {
+        [_prefs setObject:@"" forKey:SH1RomPathPrefKey];
+    }
+    
+    if([_prefs objectForKey:CDBlockLLEOnPrefKey]) {
+        [cdbLLE setState:[_prefs boolForKey:CDBlockLLEOnPrefKey] ?
+                   NSOnState : NSOffState];
+    }
+    else {
+        [_prefs setBool:NO forKey:CDBlockLLEOnPrefKey];
+    }
+    
+    if([_prefs objectForKey:HQSoundPrefKey]) {
+        [newScsp setState:[_prefs boolForKey:HQSoundPrefKey] ?
+                   NSOnState : NSOffState];
+    }
+    else {
+        [_prefs setBool:YES forKey:HQSoundPrefKey];
+    }
+    
+    if([_prefs objectForKey:MultithreadingOnPrefKey]) {
+        [enableThreads setState:[_prefs boolForKey:MultithreadingOnPrefKey] ?
+                   NSOnState : NSOffState];
+    }
+    else {
+        [_prefs setBool:YES forKey:MultithreadingOnPrefKey];
+    }
 
     if([_prefs stringForKey:MpegRomPrefKey]) {
         [mpegPath setStringValue:[_prefs stringForKey:MpegRomPrefKey]];
@@ -188,19 +188,13 @@
     [_prefs synchronize];
 }
 
-- (void)dealloc
-{
-    [_prefs release];
-    [super dealloc];
-}
-
 - (void)controlTextDidEndEditing:(NSNotification *)notification
 {
     id obj = [notification object];
 
-	if(obj == sh1Path) {
-		[_prefs setObject:[sh1Path stringValue] forKey:SH1RomPathPrefKey];
-	}
+    if(obj == sh1Path) {
+        [_prefs setObject:[sh1Path stringValue] forKey:SH1RomPathPrefKey];
+    }
     if(obj == biosPath) {
         [_prefs setObject:[biosPath stringValue] forKey:BiosPathPrefKey];
     }
@@ -289,17 +283,17 @@
 
 - (IBAction)sh1Browse:(id)sender
 {
-	NSOpenPanel *p = [NSOpenPanel openPanel];
-	
-	[p setTitle:@"Select a Saturn SH1 Rom"];
-	
-	if([p runModal] == NSFileHandlingPanelOKButton) {
-		[sh1Path setStringValue:[[[p URLs] objectAtIndex:0] path]];
-		
-		/* Update the preferences file. */
-		[_prefs setObject:[sh1Path stringValue] forKey:SH1RomPathPrefKey];
-		[_prefs synchronize];
-	}
+    NSOpenPanel *p = [NSOpenPanel openPanel];
+    
+    [p setTitle:@"Select a Saturn SH1 Rom"];
+    
+    if([p runModal] == NSFileHandlingPanelOKButton) {
+        [sh1Path setStringValue:[[[p URLs] objectAtIndex:0] path]];
+        
+        /* Update the preferences file. */
+        [_prefs setObject:[sh1Path stringValue] forKey:SH1RomPathPrefKey];
+        [_prefs synchronize];
+    }
 }
 
 - (IBAction)mpegBrowse:(id)sender
@@ -356,23 +350,23 @@
 
 - (IBAction)cdbToggle:(id)sender
 {
-	/* Update the preferences file. */
-	[_prefs setBool:([sender state] == NSOnState) forKey:CDBlockLLEOnPrefKey];
-	[_prefs synchronize];
+    /* Update the preferences file. */
+    [_prefs setBool:([sender state] == NSOnState) forKey:CDBlockLLEOnPrefKey];
+    [_prefs synchronize];
 }
 
 - (IBAction)scspToggle:(id)sender
 {
-	/* Update the preferences file. */
-	[_prefs setBool:([sender state] == NSOnState) forKey:HQSoundPrefKey];
-	[_prefs synchronize];
+    /* Update the preferences file. */
+    [_prefs setBool:([sender state] == NSOnState) forKey:HQSoundPrefKey];
+    [_prefs synchronize];
 }
 
 - (IBAction)threadsToggle:(id)sender
 {
-	/* Update the preferences file. */
-	[_prefs setBool:([sender state] == NSOnState) forKey:MultithreadingOnPrefKey];
-	[_prefs synchronize];
+    /* Update the preferences file. */
+    [_prefs setBool:([sender state] == NSOnState) forKey:MultithreadingOnPrefKey];
+    [_prefs synchronize];
 }
 
 - (IBAction)buttonSelect:(id)sender
@@ -520,7 +514,7 @@
 
 - (NSString *)sh1Path
 {
-	return [sh1Path stringValue];
+    return [sh1Path stringValue];
 }
 
 - (BOOL)emulateBios
@@ -530,17 +524,17 @@
 
 - (BOOL)cdbLLE
 {
-	return [cdbLLE state] == NSOnState;
+    return [cdbLLE state] == NSOnState;
 }
 
 - (BOOL)newScsp
 {
-	return [newScsp state] == NSOnState;
+    return [newScsp state] == NSOnState;
 }
 
 - (BOOL)enableThreads
 {
-	return [enableThreads state] == NSOnState;
+    return [enableThreads state] == NSOnState;
 }
 
 - (NSString *)mpegPath

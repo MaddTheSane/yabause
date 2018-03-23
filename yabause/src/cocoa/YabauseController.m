@@ -88,12 +88,6 @@ static void FlipToggle(NSMenuItem *item) {
     }
 }
 
-- (void)dealloc
-{
-    [_runLock release];
-    [super dealloc];
-}
-
 - (BOOL)windowShouldClose:(id)sender
 {
     [self terminateEmulation];
@@ -237,7 +231,7 @@ static void FlipToggle(NSMenuItem *item) {
 - (void)startEmulationWithCDCore:(int)cdcore CDPath:(const char *)fn
 {
     if(!_running) {
-		yabauseinit_struct yinit = {0};
+        yabauseinit_struct yinit = {0};
         int initok;
         NSString *bios = [prefs biosPath];
         NSString *mpeg = [prefs mpegPath];
@@ -269,32 +263,32 @@ static void FlipToggle(NSMenuItem *item) {
         yinit.frameskip = [frameskip state] == NSOnState;
         yinit.clocksync = 0;
         yinit.basetime = 0;
-		
-		if([prefs enableThreads])
-		{
-			NSInteger num_threads = [[NSProcessInfo processInfo] processorCount];
-			
-			if(num_threads > 1)
-			{
-				yinit.usethreads = 1;
-				yinit.numthreads = num_threads;
-			}
-		}
-		
-		NSString *sh1 = [prefs sh1Path];
-		
-		if([prefs cdbLLE] && [sh1 length] > 0)
-		{
-			yinit.sh1rompath = strdup([sh1 fileSystemRepresentation]);
-		
-			yinit.use_cd_block_lle = 1;
-			yinit.use_scu_dma_timing = 1;
-			yinit.use_sh2_dma_timing = 1;
-			yinit.sh2_cache_enabled = 1;
-		}
-		
-		yinit.use_new_scsp = [prefs newScsp];
-		
+        
+        if([prefs enableThreads])
+        {
+            NSInteger num_threads = [[NSProcessInfo processInfo] processorCount];
+            
+            if(num_threads > 1)
+            {
+                yinit.usethreads = 1;
+                yinit.numthreads = num_threads;
+            }
+        }
+        
+        NSString *sh1 = [prefs sh1Path];
+        
+        if([prefs cdbLLE] && [sh1 length] > 0)
+        {
+            yinit.sh1rompath = strdup([sh1 fileSystemRepresentation]);
+        
+            yinit.use_cd_block_lle = 1;
+            yinit.use_scu_dma_timing = 1;
+            yinit.use_sh2_dma_timing = 1;
+            yinit.sh2_cache_enabled = 1;
+        }
+        
+        yinit.use_new_scsp = [prefs newScsp];
+        
         yinit.skip_load = 0;
 
         /* Set up the internal save ram if specified. */
@@ -357,43 +351,43 @@ static void FlipToggle(NSMenuItem *item) {
 
 - (void)emulationThread:(id)ignored
 {
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-    CGLContextObj cxt;
+    @autoreleasepool {
+        CGLContextObj cxt;
 
-    _emuThd = [NSThread currentThread];
+        _emuThd = [NSThread currentThread];
 
-    /* Make the OpenGL context current for this thread, otherwise we will be
-       drawing to nothingness. */
-    [[view openGLContext] makeCurrentContext];
+        /* Make the OpenGL context current for this thread, otherwise we will be
+           drawing to nothingness. */
+        [[view openGLContext] makeCurrentContext];
 
-    /* Make sure the video core knows the size of the display... */
-    [view reshape];
+        /* Make sure the video core knows the size of the display... */
+        [view reshape];
 
-    ScspUnMuteAudio(SCSP_MUTE_SYSTEM);
+        ScspUnMuteAudio(SCSP_MUTE_SYSTEM);
 
-    while(_running) @autoreleasepool {
-        /* If we get paused from the GUI, we'll end up waiting in this lock
-           here... Maybe not the most clear way to do it, but it works. */
-        [_runLock lock];
+        while(_running) @autoreleasepool {
+            /* If we get paused from the GUI, we'll end up waiting in this lock
+               here... Maybe not the most clear way to do it, but it works. */
+            [_runLock lock];
 
-        /* Make sure the main thread doesn't attempt to flip the buffer before
-           this thread is done rendering. */
-        cxt = CGLGetCurrentContext();
-        CGLLockContext(cxt);
+            /* Make sure the main thread doesn't attempt to flip the buffer before
+               this thread is done rendering. */
+            cxt = CGLGetCurrentContext();
+            CGLLockContext(cxt);
 
-        /* Shortcut a function call here... We should technically be doing a
-           PERCore->HandleEvents(), but that function simply calls YabauseExec()
-           anyway... so cut out the middleman. */
-        YabauseExec();
+            /* Shortcut a function call here... We should technically be doing a
+               PERCore->HandleEvents(), but that function simply calls YabauseExec()
+               anyway... so cut out the middleman. */
+            YabauseExec();
 
-        CGLUnlockContext(cxt);
-        [_runLock unlock];
+            CGLUnlockContext(cxt);
+            [_runLock unlock];
+        }
+
+        ScspMuteAudio(SCSP_MUTE_SYSTEM);
+
+        _doneExecuting = YES;
     }
-
-    ScspMuteAudio(SCSP_MUTE_SYSTEM);
-
-    _doneExecuting = YES;
-    [pool release];
 }
 
 - (void)terminateEmulation

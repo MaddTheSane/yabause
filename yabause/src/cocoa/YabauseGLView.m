@@ -46,21 +46,16 @@
     fmt = [[NSOpenGLPixelFormat alloc] initWithAttributes:attrs];
 
     if(fmt == nil)  {
-        [fmt release];
-        [self release];
         return nil;
     }
 
     if(!(self = [super initWithFrame:frameRect pixelFormat:fmt])) {
-        [fmt release];
         return nil;
     }
     
     CGLEnable([self.openGLContext CGLContextObj], kCGLCECrashOnRemovedFunctions);
 
     _isFullscreen = NO;
-
-    [fmt release];
 
     return self;
 }
@@ -100,7 +95,6 @@
     else {
         [self setFrame:oldFrame];
         [window setContentView:self];
-        [fsWindow release];
         fsWindow = nil;
     }
 

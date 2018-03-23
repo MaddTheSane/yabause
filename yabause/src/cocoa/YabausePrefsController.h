@@ -24,15 +24,15 @@
 
 @interface YabausePrefsController : NSObject <NSTextFieldDelegate> {
     IBOutlet NSTextField *biosPath;
-	IBOutlet NSTextField *sh1Path;
+    IBOutlet NSTextField *sh1Path;
     IBOutlet NSTextField *bramPath;
     IBOutlet NSButton *cartBrowse;
     IBOutlet NSTextField *cartPath;
     IBOutlet NSPopUpButton *cartType;
     IBOutlet NSButton *emulateBios;
-	IBOutlet NSButton *cdbLLE;
-	IBOutlet NSButton *newScsp;
-	IBOutlet NSButton *enableThreads;
+    IBOutlet NSButton *cdbLLE;
+    IBOutlet NSButton *newScsp;
+    IBOutlet NSButton *enableThreads;
     IBOutlet NSTextField *mpegPath;
     IBOutlet NSPopUpButton *region;
     IBOutlet NSPopUpButton *soundCore;
@@ -71,15 +71,15 @@
 @property (readonly) int region;
 @property (readonly) int soundCore;
 @property (readonly) int videoCore;
-@property (readonly, retain) NSString *biosPath;
-@property (readonly, retain) NSString *sh1Path;
+@property (readonly, strong) NSString *biosPath;
+@property (readonly, strong) NSString *sh1Path;
 @property (readonly) BOOL cdbLLE;
 @property (readonly) BOOL emulateBios;
 @property (readonly) BOOL newScsp;
 @property (readonly) BOOL enableThreads;
-@property (readonly, retain) NSString *mpegPath;
-@property (readonly, retain) NSString *bramPath;
-@property (readonly, retain) NSString *cartPath;
+@property (readonly, strong) NSString *mpegPath;
+@property (readonly, strong) NSString *bramPath;
+@property (readonly, strong) NSString *cartPath;
 
 @end
 
