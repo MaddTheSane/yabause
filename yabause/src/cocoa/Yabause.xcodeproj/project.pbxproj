@@ -57,7 +57,6 @@
 		2A7D3A9B115BAB9E00DE3BD1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A7D3A99115BAB9E00DE3BD1 /* MainMenu.xib */; };
 		2A82CCA1116171DB00F15B02 /* PerCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A82CCA0116171DB00F15B02 /* PerCocoa.m */; };
 		2A9D7600116645D700A580EB /* sndmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D75FE116645D700A580EB /* sndmac.c */; };
-		2A9D760E11665F2800A580EB /* controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9D760D11665F2800A580EB /* controller.png */; };
 		2A9D7621116667C300A580EB /* YabausePrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D761F116667C300A580EB /* YabausePrefsController.m */; };
 		2AD10F9F118BBC850088FB2C /* snddummy.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD10F99118BBC850088FB2C /* snddummy.c */; };
 		2AD10FA0118BBC850088FB2C /* sndwav.c in Sources */ = {isa = PBXBuildFile; fileRef = 2AD10F9A118BBC850088FB2C /* sndwav.c */; };
@@ -115,11 +114,11 @@
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2A1145171385E5010087C872 /* YabauseButtonFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YabauseButtonFormatter.h; sourceTree = "<group>"; };
 		2A1145181385E5010087C872 /* YabauseButtonFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YabauseButtonFormatter.m; sourceTree = "<group>"; };
 		2A3392701162E100000DA0E9 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
@@ -220,7 +219,6 @@
 		2A82CCA0116171DB00F15B02 /* PerCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerCocoa.m; sourceTree = "<group>"; };
 		2A9D75FE116645D700A580EB /* sndmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sndmac.c; sourceTree = "<group>"; };
 		2A9D75FF116645D700A580EB /* sndmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sndmac.h; sourceTree = "<group>"; };
-		2A9D760D11665F2800A580EB /* controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller.png; sourceTree = "<group>"; };
 		2A9D761F116667C300A580EB /* YabausePrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YabausePrefsController.m; sourceTree = "<group>"; };
 		2A9D7620116667C300A580EB /* YabausePrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YabausePrefsController.h; sourceTree = "<group>"; };
 		2AD10F97118BBC850088FB2C /* scsp2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = scsp2.c; sourceTree = "<group>"; };
@@ -354,20 +352,6 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2A3392701162E100000DA0E9 /* GLUT.framework */,
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				2A7D3A1D115BA29F00DE3BD1 /* OpenGL.framework */,
-				2A7D3A30115BA35200DE3BD1 /* CoreFoundation.framework */,
-				2A7D3A32115BA35200DE3BD1 /* IOKit.framework */,
-				2A474DEF1163A013006993EA /* AudioUnit.framework */,
-				2A474DF11163A013006993EA /* CoreAudio.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,7 +403,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2A9D760D11665F2800A580EB /* controller.png */,
 				2A7D3AD4115BB01500DE3BD1 /* Yabause.icns */,
 				8D1107310486CEB800E47090 /* Yabause-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -435,7 +418,13 @@
 			isa = PBXGroup;
 			children = (
 				558C7BE520633397009CE1F5 /* OpenAL.framework */,
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				2A3392701162E100000DA0E9 /* GLUT.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				2A7D3A1D115BA29F00DE3BD1 /* OpenGL.framework */,
+				2A7D3A30115BA35200DE3BD1 /* CoreFoundation.framework */,
+				2A7D3A32115BA35200DE3BD1 /* IOKit.framework */,
+				2A474DEF1163A013006993EA /* AudioUnit.framework */,
+				2A474DF11163A013006993EA /* CoreAudio.framework */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -753,7 +742,6 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				2A7D3A9B115BAB9E00DE3BD1 /* MainMenu.xib in Resources */,
 				554AD97E206447E70032B889 /* MacOSD.xib in Resources */,
-				2A9D760E11665F2800A580EB /* controller.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1100,6 +1088,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Yabause-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = org.yabause.yabause.cocoa;
 				PRODUCT_NAME = Yabause;
 				SDKROOT = macosx;
 			};
@@ -1122,6 +1111,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Yabause-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = org.yabause.yabause.cocoa;
 				PRODUCT_NAME = Yabause;
 				SDKROOT = macosx;
 			};
